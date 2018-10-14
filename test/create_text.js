@@ -9,9 +9,14 @@ const User = require('../src/user');
 describe('Creating records', () => {
   // 'it' will tell the app that the project owner is trying to pass a test
   // make sure semi-colons are properly placed.
-  it('saves a user', () => {
+  it('saves a user', (done) => {
      const joe = new User({ name: 'Joe' });
 
-     joe.save();
+     joe.save()
+     .then(() => {
+       //Has Joe been saved successfully?
+       assert(!joe.isNew)
+       done();
+     })
   });
 });
