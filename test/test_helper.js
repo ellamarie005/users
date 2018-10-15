@@ -1,3 +1,4 @@
+const assert = require('assert');
 const mongoose = require('mongoose');
 
 // global.Promise is reference to the ES6 promise, which is what you would want to use
